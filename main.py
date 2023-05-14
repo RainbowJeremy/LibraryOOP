@@ -62,8 +62,7 @@ class Library:
             for l in lines:
                 f.write(l)
                 f.write("\n")
-
-                    
+                  
     def is_unique(self, search_term):
         """Check that a member's name is unique"""
         term = search_term.lower()
@@ -78,7 +77,6 @@ class Library:
                 if term == data[0].lower():
                     return False
         return True
-    
     
     def notify_member(self, member_id, message="Hello from TUD Library"):
         """Send an sms to a member to notify of availablilty"""
@@ -166,8 +164,6 @@ class Member:
                 f.write(l)
                 f.write('\n')
 
-        
-
     def reserve(self, item):
         library = Library()
         with open('library.txt', 'a') as f:
@@ -213,7 +209,6 @@ class Items:
                         return line
                     i+=1
 
-
     def is_borrowed(self):
         """This shows if an item is being borrowed"""
         with open('borrowing.txt', 'r') as f:
@@ -227,6 +222,7 @@ class Items:
                     return True
             return False
 
+        
 class Books(Items):
     item_type = 1
     def __init__(self, *args, **kwargs):
@@ -238,7 +234,8 @@ class Books(Items):
     
     def __repr__(self):
         return f"{self.title}|{self.author}|{self.year}|{self.genre}|{self.id}"
-    
+ 
+
 class Articles(Items):
     item_type = 2
     def __init__(self, *args, **kwargs):
@@ -250,7 +247,8 @@ class Articles(Items):
     
     def __repr__(self):
         return f"{self.title}|{self.author}|{self.year}|{self.journal}|{self.id}"
-    
+ 
+
 class DigitalMedia(Items):
     item_type = 3
     def __init__(self, *args, **kwargs):
