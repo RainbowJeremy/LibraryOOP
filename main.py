@@ -50,19 +50,7 @@ class Library:
 
 
     
-    def search_member(self, search_term):
-        len(search_term)
-        term = search_term.lower()
-        with open('members.txt') as file:
-            for line in file:
-                member = line.lower()
-                endpoint = len(member) - len(search_term)
-                i=0
-                while i < endpoint:
-                    if member[i:i+len(search_term)] == search_term:
-                        args = line.split("|")
-                        return Member(*args)
-                    i+=1
+
 
     
     def delete(self, id, filename):
