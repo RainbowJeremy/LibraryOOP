@@ -20,16 +20,17 @@ class Library:
         id = id.strip("\n")
         with open(filename) as f:
             for line in f:
-                attributes = line.split('|')#tuple(line.split('|'))
+                attributes = line.split('|') # get the data from the file and convert to a list
                 print(attributes)
                 if id.strip() == attributes[-1].strip().strip('\n'):
                     if repr:
                         return attributes
-                    return _type(*attributes)
+                    return _type(*attributes) # create an instance of an object
         print("This ID was not found")
         return None
         
     def member_login(self):
+        """ask the user to sign in or create a new member"""
         name = input('Enter member name: ')
         unique = self.is_unique(name)
         if unique:
@@ -107,7 +108,6 @@ class Library:
             from_="+12707175012",
             to=member.phone
         )
-        print(message)
 
 
 class Member:
@@ -356,6 +356,10 @@ while True:
         print(new_member)
 
     elif choice == '4':
+        with open('items.txt') as f:
+            for line in f:
+                if len(line)>3:
+                    print(line.strip("\n"))
         item=None
         while not item:
             item_id = input('Enter item ID or \'.\' to exit: ')
@@ -401,7 +405,8 @@ while True:
 
         with open('items.txt') as f:
             for line in f:
-                print(line)
+                if len(line)>3:
+                    print(line.strip("\n"))
 
         item = None
         while not item:
