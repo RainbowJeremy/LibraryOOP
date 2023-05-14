@@ -47,11 +47,6 @@ class Library:
             print("Now logged in as", member.name)
             return member
         return None
-
-
-    
-
-
     
     def delete(self, id, filename):
         """This deletes a piece of data from a given database"""
