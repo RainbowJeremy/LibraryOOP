@@ -482,5 +482,5 @@ while True:
         break
     else:
         print('Invalid choice. Please try again.')
-    input("")
+    input("Press Enter to continue")
     print('\n')
